@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최준성 포트폴리오 | 감정 기반 AI 플랫폼</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 기본 스타일 리셋 --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(to bottom, #fdfdff 0%, #f7f7f9 100%);
+            color: #333;
+            line-height: 1.7;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* --- 컨테이너 --- */
+        .container {
+            max-width: 960px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(100, 100, 150, 0.07);
+            border: 1px solid #f0f0f0;
+            overflow: hidden;
+        }
+
+        /* --- 헤더 (프로젝트명 및 한 줄 소개) --- */
+        header {
+            background: linear-gradient(135deg, #5a78f0 0%, #9a66f2 100%);
+            color: #ffffff;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        header .hero-text {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.95;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* --- 메인 컨텐츠 영역 --- */
+        main {
+            padding: 40px;
+        }
+
+        /* --- 섹션 공통 스타일 --- */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #5a78f0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #5a78f0;
+            margin-bottom: 25px;
+        }
+
+        /* --- 1. 기본 정보 (About Me) --- */
+        #about .about-me-text {
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fdfdfd;
+            border: 1px solid #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .contact-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .contact-list li {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-list strong {
+            font-weight: 500;
+            color: #333;
+            min-width: 100px;
+            display: inline-block;
+        }
+
+        .contact-list a {
+            color: #5a78f0; 
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .contact-list a:hover {
+            text-decoration: underline;
+            color: #764ba2; 
+        }
+
+        /* --- 2. 기술 스택 (Skills) --- */
+        .skills-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .skills-list li {
+            background-color: #fafbff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border-left: 4px solid #9a66f2;
+            transition: all 0.2s ease-out;
+        }
+
+        .skills-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .skills-list strong {
+            font-weight: 700;
+            color: #5a78f0; 
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        /* --- 3. 프로젝트 상세 --- */
+        #project-details .subsection {
+            margin-bottom: 30px;
+        }
+
+        #project-details h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        #project-details p {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+        
+        .description-block {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        .problem-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .problem-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        
+        .problem-list li::before {
+            content: '🔹';
+            position: absolute;
+            left: 0;
+            top: 3px;
+            font-size: 1rem;
+        }
+
+        .feature-block {
+            background-color: #ffffff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .feature-block:hover {
+             box-shadow: 0 5px 15px rgba(100, 100, 150, 0.1);
+        }
+
+        .feature-block h3 {
+            font-size: 1.4rem;
+            color: #5a78f0; 
+            margin-top: 0;
+        }
+
+        .bullet-list {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1.05rem;
+        }
+
+        .bullet-list li {
+            margin-bottom: 8px;
+        }
+
+        /* --- 4. 관련 이미지 --- */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; 
+            border-radius: 8px;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .portfolio-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* 텍스트 이니셜을 위한 새 스타일 */
+        .profile-initial {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            /* 텍스트 중앙 정렬을 위한 flex */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem; /* 큰 이니셜 */
+            font-weight: 700;
+            color: #5a78f0; /* 테마 색상 */
+            background-color: #f5f7fa; /* 연한 배경색 */
+        }
+
+
+        /* --- 편집 필요 영역 표시 (GitHub 용) --- */
+        .placeholder {
+            background-color: #fffbeb;
+            color: #b45309;
+            font-style: italic;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>진심으로 소통하는 감정 기반 AI 플랫폼</h1>
+            <p class="hero-text">
+                기술을 통해 사람들의 마음을 연결하고, 진심 어린 공감을 전하는 AI 개발자 최준성입니다.
+            </p>
+        </header>
+
+        <main>
+
+            <section id="about" class="section">
+                <h2>1. 기본 정보 (About Me & Contact)</h2>
+                
+                <p class="about-me-text">
+                    "저는 청년층이 겪는 심리적 불안감과 고민을 기술로 해결하는 데 깊은 관심을 가진 개발자입니다. 특히 기존 AI의 기계적인 반응을 넘어, 사용자의 감정을 깊이 이해하고 진심으로 공감할 수 있는 '감정 기반 AI 플랫폼'을 만드는 것을 목표로 하고 있습니다.
+                    <br><br>
+                    이 프로젝트를 통해, 단순히 정보를 제공하는 AI가 아닌, 사용자의 상황과 맥락을 파악하여 실질적인 위로와 조언을 제공하는 '정서적 소통 채널'을 구축하고자 합니다. 기술이 사람에게 따뜻한 힘이 될 수 있음을 증명하고 싶습니다."
+                </p>
+                
+                <ul class="contact-list">
+                    <li><strong>이름:</strong> 최준성</li>
+                    <li><strong>이메일:</strong> junsung5130@naver.com</li>
+                    <li><strong>GitHub:</strong> <a href="#" target="_blank"><span class="placeholder">[GitHub URL을 여기에 넣어주세요]</span></a></li>
+                </ul>
+            </section>
+
+            <section id="skills" class="section">
+                <h2>2. 전체 기술 스택 (Skills)</h2>
+                <ul class="skills-list">
+                    <li>
+                        <strong>프론트엔드:</strong>
+                        React, JavaScript (ES6+), HTML5, CSS3
+                    </li>
+                    <li>
+                        <strong>백엔드:</strong>
+                        Python, Flask (또는 FastAPI)
+                    </li>
+                    <li>
+                        <strong>AI/ML:</strong>
+                        Hugging Face (Transformers), Scikit-learn
+                    </li>
+                    <li>
+                        <strong>DevOps & Tools:</strong>
+                        Git, VS Code, Postman
+                    </li>
+                </ul>
+            </section>
+
+            <section id="project-details" class="section">
+                <h2>3. 프로젝트 상세</h2>
+
+                <div class="subsection">
+                    <h3>[문제 정의]</h3>
+                    <ul class="problem-list">
+                        <li><strong>청년층 심리적 불안 증가:</strong> 진로, 취업, 사회생활 등으로 인한 청년층의 심리적 부담과 불안감이 증대하고 있습니다.</li>
+                        <li><strong>고민 공유의 어려움:</strong> 주변에 깊은 고민을 털어놓기 어렵거나, 멘토가 부족한 현실적 어려움이 있습니다.</li>
+                        <li><strong>기존 AI의 한계:</strong> 현재의 대화형 AI는 사용자의 감정을 인식하고 공감하는 능력에 명확한 한계를 보입니다.</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3>[아키텍처/설계]</h3>
+                    <p class="description-block">
+                        사용자가 React 기반의 프론트엔드에서 채팅을 입력하면, API 요청이 Python (Flask) 백엔드 서버로 전송됩니다. 백엔드에서는 Hugging Face의 감정 분석 모델을 호출하여 텍스트의 감정(예: 슬픔, 불안)을 1차로 분류합니다. 이 감정 데이터와 대화 맥락을 바탕으로, 공감형 응답을 생성하는 LLM(Large Language Model)의 프롬프트를 동적으로 구성하여 '진심 어린' 답변을 생성합니다. 이 응답이 다시 프론트엔드로 전송되어 사용자에게 보여집니다.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3>[핵심 기능]</h3>
+                    
+                    <div class="feature-block">
+                        <h3>핵심 기능 1: 감정 상태 인식</h3>
+                        <p>Hugging Face의 `transformers` 라이브러리를 활용하여, 한국어 감정 분석에 특화된 pre-trained 모델(예: `klue/bert-base`)을 기반으로 구현했습니다. 사용자의 입력 텍스트를 모델에 전달하면 '기쁨', '슬픔', '분노', '불안' 등 7가지의 다중 레이블 감정 점수를 반환받아, 가장 확률이 높은 감정을 핵심 상태로 파악합니다.</p>
+                    </div>
+
+                    <div class="feature-block">
+                        <h3>핵심 기능 2: 공감 및 조언 제공</h3>
+                        <p>핵심 기능 1에서 인식된 감정 상태(예: '불안')를 바탕으로, 상황별로 미리 정의된 공감형 프롬프트 템플릿을 동적으로 선택합니다. 'RAG(Retrieval-Augmented Generation)' 기법을 일부 차용하여, 검증된 심리 상담 가이드라인 데이터를 기반으로 LLM이 사실에 기반한 실질적인 조언을 생성하도록 유도했습니다.</p>
+                    </div>
+
+                    <div class="feature-block">
+                        <h3>핵심 기능 3: 안전한 정서적 소통 플랫폼</h3>
+                        <p>모든 대화 내용은 암호화되어 데이터베이스에 저장되며, 사용자의 익명성을 보장합니다. React의 `Context API`를 사용하여 사용자 세션을 관리하고, '판단이나 비난 없는' 안전한 소통 공간을 기술적으로 보장하여 사용자의 신뢰도를 높입니다.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>[나의 역할 및 기여]</h3>
+                    <ul class="bullet-list">
+                        <li>프로젝트 기획 및 '공감 능력 기반 대화형 AI' 컨셉 정의</li>
+                        <li>React 기반 프론트엔드 UI/UX 설계 및 전체 컴포넌트 구현</li>
+                        <li>Python (Flask)을 이용한 백엔드 API 서버 구축 및 데이터베이스 설계</li>
+                        <li>Hugging Face 감정 분석 모델 선정, 테스트 및 API 연동</li>
+                        <li>LLM 프롬프트 엔지니어링을 통한 공감형 응답 생성 로직 개발</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3>[결과 및 성과 (또는 개발 목표)]</h3>
+                    <ul class="bullet-list">
+                        <li>청년층의 심리적 고립감을 완화하고 정서적 웰빙 증진에 기여</li>
+                        <li>초기 불안 요소를 감지하고 대응함으로써 정신건강 문제 예방에 기여</li>
+                        <li>판단이나 비난 없이 안전하고 비밀스러운 감정 소통 환경 제공</li>
+                        <li>진심 어린 공감과 현실적인 문제 해결을 위한 실질적 지원 제공</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3>[회고 (배운 점)]</h3>
+                    <p>단순히 API를 호출하는 것을 넘어, LLM의 '프롬프트 엔지니어링'이 AI의 응답 품질(공감 능력)에 얼마나 큰 영향을 미치는지 실감했습니다. 또한, 사용자의 민감한 '감정' 데이터를 다루는 서비스로서, 기술적 성능뿐만 아니라 데이터 보안과 사용자 프라이버시의 윤리적 책임감을 깊이 고민할 수 있었습니다.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>[회고 (개선점)]</h3>
+                    <ul class="bullet-list">
+                        <li>향후 전문 상담 및 교육 시스템과의 연계를 통해 서비스 범위를 지속적으로 확장할 계획입니다.</li>
+                        <li>현재 텍스트 기반인 감정 인식을, 향후에는 사용자의 음성(톤, 억양)까지 분석하는 STT(Speech-to-Text) 모델을 도입하여 감정 인식의 정확도를 높이고 싶습니다.</li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <section id="images" class="section">
+                <h2>4. 관련 이미지</h2>
+                <div class="image-gallery">
+                    
+                    <div class="profile-initial">C J S</div>
+                    
+                    <img src="https://images.pexels.com/photos/8566472/pexels-photo-8566472.jpeg?auto=compress&cs=tinysrgb&w=600" alt="프로젝트 메인 이미지" class="portfolio-image">
+                    
+                    <img src="https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=600" alt="아키텍처 다이어그램" class="portfolio-image">
+                    
+                    <img src="https://images.pexels.com/photos/5439152/pexels-photo-5439152.jpeg?auto=compress&cs=tinysrgb&w=600" alt="핵심 기능 1 스크린샷" class="portfolio-image">
+                    
+                    <img src="https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=600" alt="핵심 기능 2 스크린샷" class="portfolio-image">
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
