@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>최준성 포트폴리오 | 감정 기반 AI 플랫폼</title>
+    <title>최준성 포트폴리오 | MindCare-AI: 감정 기반 AI 상담 플랫폼</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -244,32 +244,27 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
         }
         
-        /* 텍스트 이니셜을 위한 새 스타일 */
-        .profile-initial {
+        .image-placeholder {
             width: 100%;
             height: 200px;
             border-radius: 8px;
-            border: 1px solid #eee;
+            border: 2px dashed #ddd;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            /* 텍스트 중앙 정렬을 위한 flex */
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-size: 2.5rem; /* 큰 이니셜 */
-            font-weight: 700;
-            color: #5a78f0; /* 테마 색상 */
-            background-color: #f5f7fa; /* 연한 배경색 */
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #888;
+            background-color: #f9f9f9;
+            padding: 10px;
         }
-
-
-        /* --- 편집 필요 영역 표시 (GitHub 용) --- */
-        .placeholder {
-            background-color: #fffbeb;
-            color: #b45309;
-            font-style: italic;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 700;
+        .image-placeholder span {
+            font-size: 0.8rem;
+            margin-top: 8px;
+            color: #aaa;
         }
 
     </style>
@@ -279,7 +274,7 @@
     <div class="container">
         
         <header>
-            <h1>진심으로 소통하는 감정 기반 AI 플랫폼</h1>
+            <h1>MindCare-AI: 진심으로 소통하는 감정 기반 AI 플랫폼</h1>
             <p class="hero-text">
                 기술을 통해 사람들의 마음을 연결하고, 진심 어린 공감을 전하는 AI 개발자 최준성입니다.
             </p>
@@ -299,7 +294,7 @@
                 <ul class="contact-list">
                     <li><strong>이름:</strong> 최준성</li>
                     <li><strong>이메일:</strong> junsung5130@naver.com</li>
-                    <li><strong>GitHub:</strong> <a href="#" target="_blank"><span class="placeholder">https://github.com/cjs-0513/</span></a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/cjs-0513/" target="_blank">https://github.com/cjs-0513/</a></li>
                 </ul>
             </section>
 
@@ -307,20 +302,20 @@
                 <h2>2. 전체 기술 스택 (Skills)</h2>
                 <ul class="skills-list">
                     <li>
-                        <strong>프론트엔드:</strong>
-                        React, JavaScript (ES6+), HTML5, CSS3
+                        <strong>언어:</strong>
+                        Python, HTML5, CSS3
                     </li>
                     <li>
-                        <strong>백엔드:</strong>
-                        Python, Flask (또는 FastAPI)
+                        <strong>프레임워크 & 라이브러리:</strong>
+                        Streamlit
                     </li>
                     <li>
                         <strong>AI/ML:</strong>
-                        Hugging Face (Transformers), Scikit-learn
+                        Google Gemini API
                     </li>
                     <li>
                         <strong>DevOps & Tools:</strong>
-                        Git, VS Code, Postman
+                        Git, VS Code
                     </li>
                 </ul>
             </section>
@@ -333,14 +328,14 @@
                     <ul class="problem-list">
                         <li><strong>청년층 심리적 불안 증가:</strong> 진로, 취업, 사회생활 등으로 인한 청년층의 심리적 부담과 불안감이 증대하고 있습니다.</li>
                         <li><strong>고민 공유의 어려움:</strong> 주변에 깊은 고민을 털어놓기 어렵거나, 멘토가 부족한 현실적 어려움이 있습니다.</li>
-                        <li><strong>기존 AI의 한계:</strong> 현재의 대화형 AI는 사용자의 감정을 인식하고 공감하는 능력에 명확한 한계를 보입니다.</li>
+                        <li><strong>기존 AI의 한계:</strong> 현재의 대화형 AI는 사용자의 감정을 깊이 인식하고 공감하는 능력에 명확한 한계를 보입니다.</li>
                     </ul>
                 </div>
 
                 <div class="subsection">
                     <h3>[아키텍처/설계]</h3>
                     <p class="description-block">
-                        사용자가 React 기반의 프론트엔드에서 채팅을 입력하면, API 요청이 Python (Flask) 백엔드 서버로 전송됩니다. 백엔드에서는 Hugging Face의 감정 분석 모델을 호출하여 텍스트의 감정(예: 슬픔, 불안)을 1차로 분류합니다. 이 감정 데이터와 대화 맥락을 바탕으로, 공감형 응답을 생성하는 LLM(Large Language Model)의 프롬프트를 동적으로 구성하여 '진심 어린' 답변을 생성합니다. 이 응답이 다시 프론트엔드로 전송되어 사용자에게 보여집니다.
+                        사용자가 Streamlit 기반의 웹 애플리케이션에서 자신의 고민을 입력하면, 해당 텍스트가 Google Gemini API로 직접 전송됩니다. Gemini 모델은 입력된 내용의 맥락과 감정을 파악하여, 사려 깊고 공감적인 답변을 생성합니다. 이 답변은 실시간으로 스트리밍되어 사용자 화면에 나타나며, 별도의 백엔드 서버 없이 Streamlit과 API만으로 전체 로직이 처리되는 간결한 구조입니다.
                     </p>
                 </div>
 
@@ -348,18 +343,18 @@
                     <h3>[핵심 기능]</h3>
                     
                     <div class="feature-block">
-                        <h3>핵심 기능 1: 감정 상태 인식</h3>
-                        <p>Hugging Face의 `transformers` 라이브러리를 활용하여, 한국어 감정 분석에 특화된 pre-trained 모델(예: `klue/bert-base`)을 기반으로 구현했습니다. 사용자의 입력 텍스트를 모델에 전달하면 '기쁨', '슬픔', '분노', '불안' 등 7가지의 다중 레이블 감정 점수를 반환받아, 가장 확률이 높은 감정을 핵심 상태로 파악합니다.</p>
+                        <h3>핵심 기능 1: 맥락 및 감정 기반 응답 생성</h3>
+                        <p>Google Gemini API를 활용하여 사용자의 입력 텍스트에 담긴 복합적인 감정과 맥락을 직접 파악합니다. 별도의 감정 분석 모델 없이, 강력한 LLM이 문장 전체의 뉘앙스를 이해하여 응답 생성에 즉시 반영합니다.</p>
                     </div>
 
                     <div class="feature-block">
                         <h3>핵심 기능 2: 공감 및 조언 제공</h3>
-                        <p>핵심 기능 1에서 인식된 감정 상태(예: '불안')를 바탕으로, 상황별로 미리 정의된 공감형 프롬프트 템플릿을 동적으로 선택합니다. 'RAG(Retrieval-Augmented Generation)' 기법을 일부 차용하여, 검증된 심리 상담 가이드라인 데이터를 기반으로 LLM이 사실에 기반한 실질적인 조언을 생성하도록 유도했습니다.</p>
+                        <p>Gemini API의 생성 능력을 활용하여, 파악된 감정과 상황에 가장 적절한 공감과 조언을 제공합니다. 정해진 템플릿을 넘어, 대화의 흐름에 맞춰 자연스럽고 진심 어린 응답을 동적으로 생성하는 데 중점을 두었습니다.</p>
                     </div>
 
                     <div class="feature-block">
-                        <h3>핵심 기능 3: 안전한 정서적 소통 플랫폼</h3>
-                        <p>모든 대화 내용은 암호화되어 데이터베이스에 저장되며, 사용자의 익명성을 보장합니다. React의 `Context API`를 사용하여 사용자 세션을 관리하고, '판단이나 비난 없는' 안전한 소통 공간을 기술적으로 보장하여 사용자의 신뢰도를 높입니다.</p>
+                        <h3>핵심 기능 3: 안전한 대화 환경</h3>
+                        <p>모든 대화 내용은 익명으로 처리되며, Streamlit의 <code>session_state</code>를 사용하여 사용자별 대화 기록을 안전하게 관리합니다. API 키는 <code>.streamlit/secrets.toml</code> 파일을 통해 환경 변수로 안전하게 관리하여 코드 내 노출을 방지하고 보안을 강화했습니다.</p>
                     </div>
                 </div>
 
@@ -367,15 +362,15 @@
                     <h3>[나의 역할 및 기여]</h3>
                     <ul class="bullet-list">
                         <li>프로젝트 기획 및 '공감 능력 기반 대화형 AI' 컨셉 정의</li>
-                        <li>React 기반 프론트엔드 UI/UX 설계 및 전체 컴포넌트 구현</li>
-                        <li>Python (Flask)을 이용한 백엔드 API 서버 구축 및 데이터베이스 설계</li>
-                        <li>Hugging Face 감정 분석 모델 선정, 테스트 및 API 연동</li>
-                        <li>LLM 프롬프트 엔지니어링을 통한 공감형 응답 생성 로직 개발</li>
+                        <li>Streamlit 기반 UI/UX 설계 및 전체 애플리케이션 구현</li>
+                        <li>Google Gemini API 연동 및 실시간 응답 스트리밍 로직 개발</li>
+                        <li>LLM 프롬프트 엔지니어링을 통한 공감형 응답 생성 로직 최적화</li>
+                        <li>API 키 관리 및 상태 관리를 포함한 애플리케이션 아키텍처 설계</li>
                     </ul>
                 </div>
 
                 <div class="subsection">
-                    <h3>[결과 및 성과 (또는 개발 목표)]</h3>
+                    <h3>[결과 및 성과]</h3>
                     <ul class="bullet-list">
                         <li>청년층의 심리적 고립감을 완화하고 정서적 웰빙 증진에 기여</li>
                         <li>초기 불안 요소를 감지하고 대응함으로써 정신건강 문제 예방에 기여</li>
@@ -386,7 +381,7 @@
 
                 <div class="subsection">
                     <h3>[회고 (배운 점)]</h3>
-                    <p>단순히 API를 호출하는 것을 넘어, LLM의 '프롬프트 엔지니어링'이 AI의 응답 품질(공감 능력)에 얼마나 큰 영향을 미치는지 실감했습니다. 또한, 사용자의 민감한 '감정' 데이터를 다루는 서비스로서, 기술적 성능뿐만 아니라 데이터 보안과 사용자 프라이버시의 윤리적 책임감을 깊이 고민할 수 있었습니다.</p>
+                    <p>Google Gemini와 같은 최신 LLM을 사용하면서, 모델의 성능을 최대로 이끌어내는 프롬프트 구성의 중요성을 다시 한번 깨달았습니다. 특히, 단순히 질문을 던지는 것을 넘어, 모델이 '공감하는 상담사' 역할을 수행하도록 유도하는 시스템 프롬프트 설계가 응답의 질을 결정한다는 것을 배웠습니다. 또한, Streamlit을 통해 Python만으로 빠르게 프로토타입을 만들고 배포하는 경험을 할 수 있었습니다.</p>
                 </div>
 
                 <div class="subsection">
@@ -400,18 +395,28 @@
             </section>
 
             <section id="images" class="section">
-                <h2>4. 관련 이미지</h2>
+                <h2>4. 관련 이미지 (샘플)</h2>
+                <!-- 
+                    TODO: 아래 이미지들을 실제 프로젝트 스크린샷으로 교체하세요.
+                    예: <img src="images/main_screen.png" alt="MindCare AI 메인 화면" class="portfolio-image">
+                -->
                 <div class="image-gallery">
-                    
-                    <div class="profile-initial">C J S</div>
-                    
-                    <img src="https://images.pexels.com/photos/8566472/pexels-photo-8566472.jpeg?auto=compress&cs=tinysrgb&w=600" alt="프로젝트 메인 이미지" class="portfolio-image">
-                    
-                    <img src="https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=600" alt="아키텍처 다이어그램" class="portfolio-image">
-                    
-                    <img src="https://images.pexels.com/photos/5439152/pexels-photo-5439152.jpeg?auto=compress&cs=tinysrgb&w=600" alt="핵심 기능 1 스크린샷" class="portfolio-image">
-                    
-                    <img src="https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=600" alt="핵심 기능 2 스크린샷" class="portfolio-image">
+                    <div class="image-placeholder">
+                        MindCare-AI 메인 화면
+                        <span>(스크린샷 교체 필요)</span>
+                    </div>
+                    <div class="image-placeholder">
+                        아키텍처 다이어그램
+                        <span>(이미지 교체 필요)</span>
+                    </div>
+                    <div class="image-placeholder">
+                        대화 화면
+                        <span>(스크린샷 교체 필요)</span>
+                    </div>
+                    <div class="image-placeholder">
+                        응답 예시
+                        <span>(스크린샷 교체 필요)</span>
+                    </div>
                 </div>
             </section>
 
